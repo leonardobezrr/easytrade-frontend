@@ -1,0 +1,25 @@
+{
+  "name": "easytrade-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardobezrr/easytrade-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardobezrr/easytrade-frontend/issues"
+  },
+  "homepage": "https://github.com/leonardobezrr/easytrade-frontend#readme",
+  "dependencies": {
+    "next": "^14.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
