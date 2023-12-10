@@ -1,0 +1,17 @@
+.botao{
+    color: var(#EBDFCC);
+    text-align: center;
+    font-family: Alata;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    width: 204px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background: #1F2F3A;
+    box-shadow: 6px 6px 3px 0px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+}
