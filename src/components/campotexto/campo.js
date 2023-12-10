@@ -9,7 +9,7 @@ const CampoTexto = (props) => {
         <div className={styles.formulario}>
             <label>
                 {props.label}
-                <imput value={props.valor} onChange={aoDigitar} required={props.prior} placeholder={props.placeholder}/>
+                <input value={props.valor} onChange={aoDigitar} required={props.prior} placeholder={props.placeholder} type={props.type}/>
             </label>
         </div>
     )
