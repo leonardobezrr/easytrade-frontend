@@ -9,14 +9,13 @@ export default function Navbar(){
                 alt='logo easy trade'
                 width={133}
                 height={72}
-                property
-                />
-                <Image
+            />
+            <Image
                 src="/menu_hamburg.svg"
                 alt='menu hamburg'
                 width={16}
                 height={12}
-                priority/>
+            />
         </div>
     )
 }
