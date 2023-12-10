@@ -9,12 +9,14 @@ export default function Footer(){
                 alt='logo easy'
                 width={330.05}
                 height={194.52}
+                priority
             />
             <Image className={styles.foot}
                 src="/footer.svg"
                 alt='imgbackgroud footer'
                 width={1440}
                 height={347}
+                priority
             />
         </section>
     )
