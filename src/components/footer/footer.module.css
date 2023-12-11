@@ -1,0 +1,6 @@
+.easy{
+    position: absolute;
+    z-index: 999;
+    right: 50%;
+    top: 1000px;
+}

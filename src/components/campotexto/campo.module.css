@@ -1,0 +1,23 @@
+.formulario label{
+    display: block;
+    margin-bottom: 8px;
+    color: #212121;
+    font-family: Montserrat;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.formulario input{
+    background: #FFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    border: none;
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    color: #A4A4A4;
+    font-family: Montserrat;
+    font-size: 1rem;
+}
