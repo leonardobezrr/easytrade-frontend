@@ -1,0 +1,92 @@
+.detalhes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    align-self: stretch;
+}
+
+.infos{
+    display: flex;
+    padding: 5px 30px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    background: rgba(177, 12, 67, 1);
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pesquisa{
+    display: flex;
+    padding: 0px 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    border: 0.5px solid #000;
+}
+
+.filtros{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.typefiltro{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.pfiltros{
+    border-radius: 5px;
+    border: 0.1px solid #000;
+    background: rgba(235, 223, 204, 0.40);
+    color: #000;
+    display: flex;
+    padding: 1px 2px;
+    align-items: center;
+    gap: 10px;
+}
+
+.titlecard{
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 218.182% */
+}
+
+.pdesc{
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 240% */
+}
+
+.h3{
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 218.182% */
+}
