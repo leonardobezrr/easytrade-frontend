@@ -1,7 +1,8 @@
-.container{
+.mainnavbar{
+    width: 100vw;
     display: flex;
-    width: 100%;
-    padding: 10px 120px;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+    background-color: #0a2232;
 }
