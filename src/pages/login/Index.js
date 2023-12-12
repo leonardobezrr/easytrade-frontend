@@ -1,66 +1,41 @@
 import styles from './login.module.css'
-import CampoTexto from '@/components/campotexto/campo'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useAuth } from '@/app/context/auth';
 
-export default function Login(){
+export default function Login() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
+    const { login } = useAuth();
 
-    const handleCadastro = async () => {
-        const url = 'https://easytrade-backend-p5k1.onrender.com/login'
-
+    const handleLogin = async () => {
         try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email,
-                    senha: senha
-                }),
-            })
-
-            if (response.ok) {
-                console.log("login bem sucedido")
-            } else {
-                console.error("falha no login")
-            }
+            const userData = await login(email, senha);
+            console.log('Login bem-sucedido. Nome do usuário:', userData);
         } catch (error) {
-            console.error("erro ao fazer login", error)
+            console.error('Erro ao fazer login', error);
         }
     }
 
-    return(
+    return (
         <div className={styles.container}>
             <div className={styles.box}>
                 <div className={styles.form}>
                     <div className={styles.box_interno}>
                         <div className={styles.inputs}>
                             <h2>Login</h2>
-                            <CampoTexto
-                            prior={true}
-                            type= "Text"
-                            placeholder="Digite seu email..."
-                            valor={email}
-                            aoAlterado={valor => setEmail(valor)}/>
-                            <CampoTexto
-                            prior={true}
-                            type="password"
-                            placeholder="Digite sua senha..."
-                            valor={senha}
-                            aoAlterado={valor => setSenha(valor)}/>
-                            <button onClick={handleCadastro}>Fazer cadastro</button>
+                            <input className={styles.inputLogin} type='email' placeholder='Digite seu e-mail...' value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <input className={styles.inputLogin} type='password' placeholder='Digite sua senha...' value={senha} onChange={(e) => setSenha(e.target.value)} />
+                            <button onClick={handleLogin}>Fazer login</button>
                         </div>
                     </div>
                     <div className={styles.imagem}>
                         <Image
-                        src="/imglogin.svg"
-                        alt='imgbackgroud login'
-                        width={597}
-                        height={523}
-                        priority
+                            src="/imglogin.svg"
+                            alt='imgbackgroud login'
+                            width={597}
+                            height={523}
+                            priority
                         />
                     </div>
                 </div>

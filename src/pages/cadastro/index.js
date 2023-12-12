@@ -1,7 +1,7 @@
 import styles from './cadastro.module.css'
-import CampoTexto from '@/components/campotexto/campo'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useRouter } from 'next/router';
 
 const Cadastro = () => {
     const [nome, setNome] = useState('')
@@ -9,30 +9,13 @@ const Cadastro = () => {
     const [senha, setSenha] = useState('')
 
     const handleCadastro = async () => {
-        const url = 'https://easytrade-backend-p5k1.onrender.com/usuarios/criar'
-
         try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    nome: nome,
-                    email: email,
-                    senha: senha
-                }),
-            })
-
-            if (response.ok) {
-                console.log("cadastro bem sucedido")
-            } else {
-                console.error("falha no cadastro")
-            }
+            const userData = await register(nome, email, senha);
+            console.log('Login bem-sucedido. Nome do usuário:', userData);
         } catch (error) {
-            console.error("erro ao fazer cadastro", error)
+            console.error('Erro ao fazer login', error);
         }
-    }
+    };
 
     return(
         <div className={styles.container}>
@@ -41,24 +24,9 @@ const Cadastro = () => {
                     <div className={styles.box_interno}>
                         <div className={styles.inputs}>
                             <h2>Cadastro</h2>
-                            <CampoTexto
-                            prior={true}
-                            type= "Text"
-                            placeholder="Digite seu nome..."
-                            valor={nome}
-                            aoAlterado={valor => setNome(valor)}/>
-                            <CampoTexto
-                            prior={true}
-                            type= "Text"
-                            placeholder="Digite seu email..."
-                            valor={email}
-                            aoAlterado={valor => setEmail(valor)}/>
-                            <CampoTexto
-                            prior={true}
-                            type="password"
-                            placeholder="Digite sua senha..."
-                            valor={senha}
-                            aoAlterado={valor => setSenha(valor)}/>
+                            <input className={styles.inputCadastro} type='text' placeholder='Digite seu nome...' value={nome} onChange={(e) => setNome(e.target.value)}/>
+                            <input className={styles.inputCadastro} type='email' placeholder='Digite seu e-mail...' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                            <input className={styles.inputCadastro} type='password' placeholder='Digite sua senha...' value={senha} onChange={(e) => setSenha(e.target.value)}/>
                             <button onClick={handleCadastro}>Fazer cadastro</button>
                         </div>
                     </div>

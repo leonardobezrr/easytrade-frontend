@@ -79,8 +79,14 @@
   margin: 0;
 }
 
+#__next {
+  background-color: white;
+  color: black;
+}
+
 html,
 body {
+  background-color: white;
   max-width: 100vw;
   overflow-x: hidden;
   margin: 0;
