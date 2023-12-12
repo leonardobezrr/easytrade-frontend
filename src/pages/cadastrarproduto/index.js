@@ -27,8 +27,7 @@ export default function CadastrarProduto() {
         const url = 'https://easytrade-backend-p5k1.onrender.com/produtos/criar';
 
         try {
-            let userData = await localStorage.getItem('user')
-            let userDataObj = JSON.parse(userData)
+            let userData = JSON.parse(localStorage.getItem('user'))
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -38,7 +37,7 @@ export default function CadastrarProduto() {
                     ...formData,
                     preco: parseFloat(formData.preco),
                     qtd_estoque: parseInt(formData.qtd_estoque),
-                    id_usuario: parseInt(userDataObj.id),
+                    id_usuario: parseInt(userData.id),
                 }),
             });
 
