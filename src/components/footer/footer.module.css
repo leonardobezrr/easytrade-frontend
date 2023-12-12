@@ -1,6 +1,8 @@
-.easy{
-    position: absolute;
-    z-index: 999;
-    right: 50%;
-    top: 1000px;
+.footer{
+    background-image: url(../../../public/footer.svg);
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
