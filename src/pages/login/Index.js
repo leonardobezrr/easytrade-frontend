@@ -11,7 +11,7 @@ export default function Login() {
     const handleLogin = async () => {
         try {
             const userData = await login(email, senha);
-            console.log('Login bem-sucedido. Nome do usuário:', userData);
+            console.log('Login bem-sucedido. Usuário', userData);
         } catch (error) {
             console.error('Erro ao fazer login', error);
         }

@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
             if (response.ok) {
                 const userData = await response.json();
                 setUser(userData);
-                setAuthenticated(true)
+                setAuthenticated(true);
                 router.push('/home');
                 return userData;
             } else {
