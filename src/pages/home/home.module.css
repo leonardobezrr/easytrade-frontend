@@ -1,0 +1,59 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #cce2eb;
+    background-image: url(../../../public/graph.svg);
+    gap: 10px;
+    padding: 120px;
+    height: 930px;
+}
+
+.h2, .h3{
+    color: white;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.tagp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.cadvenda{
+    background-color: #b10c43;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 3px 0px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+}
+
+.cadvenda:hover{
+    padding: 10px 15px;
+}
+
+.p{
+    font-size: 20px;
+    color: white;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 6px 6px 3px 0px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    background-color: #348e91;
+    padding: 90px;
+    border-radius: 15px;
+    gap: 10px;
+}
