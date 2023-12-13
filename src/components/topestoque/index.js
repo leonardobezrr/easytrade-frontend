@@ -17,7 +17,6 @@ export default function Top(){
                 <BotaoEstoque>
                     <Link href="/cadastrarproduto">Cadastrar novo produto</Link>
                 </BotaoEstoque>
-                <BotaoEstoque>Editar</BotaoEstoque>
             </div>
         </section>
     )
