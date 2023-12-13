@@ -1,28 +1,3 @@
-.head{
-    display: flex;
-    padding: 2px 0px;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
-}
-
-.tabela{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 0;
-}
-
-.titles{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    flex: 1 0 0;
-}
-
 .h3{
     color: #FFF;
     font-family: Inter;
@@ -41,10 +16,20 @@
     line-height: 24px; /* 150% */
 }
 
-.tit{
-    background: var(--Color-3, #B10C43);
+.table{
     width: 100%;
-    align-items: center;
-    justify-content: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.th{
+    padding: 2em;
+    border: 1px solid black;
+}
+
+.td {
+    padding: 2em;
+    border: 1px solid black;
 }
