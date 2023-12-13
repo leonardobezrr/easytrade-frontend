@@ -17,7 +17,7 @@ export default function Tabela() {
 
     const fetchProdutos = async (idUsuario) => {
         try {
-            const response = await fetch(`https://easytrade-backend-p5k1.onrender.com/vendas/listar/${idUsuario}`);
+            const response = await fetch(`https://easytrade-backend-p5k1.onrender.com/produtos/listar/${idUsuario}`);
             if (response.ok) {
                 const data = await response.json();
                 console.log('Dados dos produtos:', data);
