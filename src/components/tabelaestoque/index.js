@@ -53,7 +53,7 @@ export default function Tabela() {
                 </td>
             </tr>
 
-            {produtos.map((produto) => (
+            {produtos?.map((produto) => (
                 <tr key={produto.id}>
                     <td>{produto.id}</td>
                     <td>{produto.nome}</td>
