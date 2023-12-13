@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (nome, email, senha) => {
         const url = 'https://easytrade-backend-p5k1.onrender.com/usuarios/criar'
-    
+
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -51,20 +51,23 @@ export const AuthProvider = ({ children }) => {
                 body: JSON.stringify({
                     nome: nome,
                     email: email,
-                    senha: senha
+                    senha: senha,
                 }),
-            })
-    
+            });
+
             if (response.ok) {
-                console.log("cadastro bem sucedido")
-                setAuthenticated(true)
+                const userData = await response.json();
+                setUser(userData);
+                setAuthenticated(true);
                 router.push('/home');
+                return userData;
             } else {
-                const errorResponse = await response.json(); // Extrai o corpo da resposta em formato JSON
-                console.error("falha no cadastro:", errorResponse.error);
+                console.error('falha no cadastro');
+                throw new Error('Falha no cadastro');
             }
         } catch (error) {
-            console.error("erro ao fazer cadastro", error)
+            console.error('erro ao fazer cadastro', error);
+            throw error;
         }
     }
 
