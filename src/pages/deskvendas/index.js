@@ -104,12 +104,12 @@ export default function Vendas() {
             </div>
             <div className={style.filtro}>
                 <div className={style.filter}>
-                <Image
-                    src="/filtro.svg"
-                    alt='logo notificação'
-                    width={24}
-                    height={22.9}
-                    priority/>
+                    <Image
+                        src="/filtro.svg"
+                        alt='logo notificação'
+                        width={24}
+                        height={22.9}
+                        priority/>
                 </div>
                 <p className={style.p1}>Filtrar por:</p>
                 <ListaSuspensa
@@ -158,3 +158,5 @@ export default function Vendas() {
                 </dialog>
             )}
         </div>
+    )
+}
