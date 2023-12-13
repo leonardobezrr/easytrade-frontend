@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './cadproduto.module.css' 
 
 export default function CadastrarProduto() {
 
@@ -53,29 +54,30 @@ export default function CadastrarProduto() {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Nome:
-                    <input type="text" name="nome" value={formData.nome} onChange={handleChange} />
-                </label>
-                <br />
-                <label>
-                    Descrição:
-                    <input type="text" name="descricao" value={formData.descricao} onChange={handleChange} />
-                </label>
-                <br />
-                <label>
-                    Preço:
-                    <input type="number" name="preco" value={formData.preco} onChange={handleChange} />
-                </label>
-                <br />
-                <label>
-                    Quantidade em Estoque:
-                    <input type="number" name="qtd_estoque" value={formData.qtd_estoque} onChange={handleChange} />
-                </label>
-                <br />
-                <button type="submit">Cadastrar Produto</button>
+        <div className={styles.container}>
+            <form className={styles.box} onSubmit={handleSubmit}>
+                <h2 className={styles.h2}>Cadastrar Produto</h2>
+                <div className={styles.box_interno}>
+                    <label className={styles.label}>
+                        <input className={styles.input} placeholder='Nome' type="text" name="nome" value={formData.nome} onChange={handleChange} />
+                    </label>
+                    <br />
+                    <label className={styles.label}>
+                        <input className={styles.input} placeholder='Descrição' type="text" name="descricao" value={formData.descricao} onChange={handleChange} />
+                    </label>
+                    <br />
+                    <label className={styles.label}>
+                        Preço:
+                        <input className={styles.input} placeholder='Preço' type="number" name="preco" value={formData.preco} onChange={handleChange} />
+                    </label>
+                    <br />
+                    <label className={styles.label}>
+                        Quantidade em Estoque:
+                        <input className={styles.input} placeholder='Q° em estoque' type="number" name="qtd_estoque" value={formData.qtd_estoque} onChange={handleChange} />
+                    </label>
+                    <br />
+                    <button className={styles.but} type="submit">Cadastrar Produto</button>
+                </div>
             </form>
         </div>
     );

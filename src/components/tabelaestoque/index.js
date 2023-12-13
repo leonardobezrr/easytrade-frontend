@@ -1,6 +1,9 @@
 import style from "./tabelaest.module.css"
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 export default function Tabela(){
+
     return(
         <div className={style.head}>
             <section className={style.tabela}>
