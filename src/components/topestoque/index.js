@@ -6,12 +6,14 @@ import Link from "next/link"
 export default function Top(){
     return(
         <section className={style.top}>
-            <Image
-            src="/menubuttom.svg"
-            alt='menubuttom'
-            width={24}
-            height={22.9}
-            priority/>
+            <Link href="/home">
+                <Image
+                src="/menubuttom.svg"
+                alt='menubuttom'
+                width={24}
+                height={22.9}
+                priority/>
+            </Link>
             <h2 className={style.title}>Estoque:</h2>
             <div className={style.but}>
                 <BotaoEstoque>
