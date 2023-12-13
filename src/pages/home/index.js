@@ -56,7 +56,7 @@ export default function Home() {
                     )}
                     <h3>Suas Vendas:</h3>
                     <ul>
-                        {vendas.length > 0 && vendas?.map((venda) => (
+                        {vendas && vendas.length > 0 && vendas.map((venda) => (
                             <li key={venda.id}>
                                 ID da Venda: {venda.id}, Data: {venda.date}, Valor: {venda.valor_venda}
                             </li>
@@ -67,5 +67,6 @@ export default function Home() {
                 </>
             )}
         </div>
-    );
+    )
+
 }
