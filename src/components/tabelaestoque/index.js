@@ -5,7 +5,7 @@ export default function Tabela() {
 
     const [produtos, setProdutos] = useState([]);
 
-    useEffect(() => {l
+    useEffect(() => {
         const idUsuario = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null;
 
         if (idUsuario) {
