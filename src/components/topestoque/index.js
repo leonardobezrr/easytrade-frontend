@@ -1,6 +1,7 @@
 import style from "./top.module.css"
 import BotaoEstoque from "../botaoestoque/botaoestoque"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Top(){
     return(
@@ -13,7 +14,9 @@ export default function Top(){
             priority/>
             <h2 className={style.title}>Estoque:</h2>
             <div className={style.but}>
-                <BotaoEstoque>Criar</BotaoEstoque>
+                <BotaoEstoque>
+                    <Link href="/cadastrarproduto">Cadastrar novo produto</Link>
+                </BotaoEstoque>
                 <BotaoEstoque>Editar</BotaoEstoque>
             </div>
         </section>
