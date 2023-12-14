@@ -21,7 +21,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
 }
 
 .td1{
@@ -32,9 +31,23 @@
     color: white;
 }
 
+.th{
+    padding: 2px 40px;
+    background: var(--Color-3, #B10C43);
+}
+
 .td{
     padding: 2px 40px;
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+}
+
+.but{
+    background: var(--buttom-card, #1B2B83);
+    display: flex;
+    padding: 3px 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
