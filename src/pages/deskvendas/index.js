@@ -13,15 +13,19 @@ export default function Vendas() {
         'id',
     ]
 
+    
+
     const [vendas, setVendas] = useState([]);
     const [filtro, setFiltros] = useState('')
     const [modalOpen, setModalOpen] = useState(false);
     const [produtosDaVenda, setProdutosDaVenda] = useState([]);
     const [selectedVendaId, setSelectedVendaId] = useState(null);
-
-    
+    const [userLocalStorageState, setUserLocalStorageState] = useState(null)
 
     useEffect(() => {
+        const userlocal = localStorage.getItem('user')
+        const userLocalStorage = JSON.parse(userlocal)
+        setUserLocalStorageState(userLocalStorage);
         const idUsuario = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null;
 
         if (idUsuario) {
@@ -73,6 +77,7 @@ export default function Vendas() {
         setProdutosDaVenda([]);
     };
 
+
     return (
         <div className={style.container}>
             <div className={style.top}>
@@ -88,7 +93,11 @@ export default function Vendas() {
                     <h2 className={style.h2}>Movimentação de caixa</h2>
                 </div>
                 <div className={style.end}>
-                    <h2>Nome de usuário</h2>
+                    {userLocalStorageState ? (
+                        <p>{userLocalStorageState.nome}</p>
+                    ): (
+                        <p>Tentei.</p>
+                    )}
                     <Image
                     src="/pp.svg"
                     alt='logo usurário'
@@ -122,22 +131,22 @@ export default function Vendas() {
                     <input className={style.input} placeholder='Valor' required={true} type="number" name="preco"/>
                 </label>
             </div>
-            <table border={1}>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Data da venda</th>
-                        <th>Valor da venda</th>
-                        <th>Ações</th>
+            <table className={style.tabela}>
+                <thead className={style.cabecalho}>
+                    <tr className={style.tr}>
+                        <th className={style.th}>ID</th>
+                        <th className={style.th}>Data da venda</th>
+                        <th className={style.th}>Valor da venda</th>
+                        <th className={style.th}>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className={style.tabela_nome}>
                     {vendas?.map((venda) => (
                         <tr key={venda.id}>
-                            <td>{venda.id}</td>
-                            <td>{venda.date}</td>
-                            <td>{venda.valor_venda}</td>
-                            <td>
+                            <td className={style.th1}>{venda.id}</td>
+                            <td className={style.th1}>{venda.date}</td>
+                            <td className={style.th1}>{venda.valor_venda}</td>
+                            <td className={style.th1}>
                                 <button onClick={() => handleVerProdutosClick(venda.id)}>ver produtos</button>
                             </td>
                         </tr>
@@ -146,15 +155,15 @@ export default function Vendas() {
             </table>
 
             {modalOpen && (
-                <dialog open={modalOpen} onClose={handleCloseModal}>
-                    <div>
-                        <h2>Produtos da Venda</h2>
+                <dialog className={style.dialog} open={modalOpen} onClose={handleCloseModal}>
+                    <div className={style.tabela_flutuante}>
+                        <h2 className={style.h2_flutuante}>Produtos da Venda</h2>
                         <ul>
                             {produtosDaVenda?.map((produto) => (
                                 <li key={produto.id}>{produto.id} | {produto.idproduto} | {produto.idvenda} | {produto.valor_unitario} | {produto.quantidade}</li>
                             ))}
                         </ul>
-                        <button onClick={handleCloseModal}>Fechar</button>
+                        <button className={style.but} onClick={handleCloseModal}>Fechar</button>
                     </div>
                 </dialog>
             )}
