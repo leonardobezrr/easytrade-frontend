@@ -24,12 +24,17 @@
     border: 1px solid black;
 }
 
-.th{
-    padding: 2em;
-    border: 1px solid black;
+.td1{
+    background: var(--Color-3, #B10C43);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-.td {
-    padding: 2em;
+.td{
+    padding: 2px 40px;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
 }
