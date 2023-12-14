@@ -5,6 +5,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [userAuth, setUserAuth] = useState()
     const [authenticated, setAuthenticated] = useState(false)
     const router = useRouter();
 
@@ -72,12 +73,18 @@ export const AuthProvider = ({ children }) => {
     }
 
     const logout = () => {
-        // Lógica para desautenticar o usuário
         setUser(null);
+        localStorage.clear();
+    };
+
+    const handleLogout = async () => {
+        await logout();
+        setUserAuth(false);
+        router.push('/'); 
     };
 
     return (
-        <AuthContext.Provider value={{ authenticated, user, login, logout, register }}>
+        <AuthContext.Provider value={{ authenticated, user, login, logout, register, handleLogout }}>
             {children}
         </AuthContext.Provider>
     );

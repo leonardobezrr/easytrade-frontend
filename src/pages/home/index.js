@@ -3,12 +3,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useAuth } from '@/app/context/auth';
+
 
 export default function Home() {
     const router = useRouter();
     const [vendas, setVendas] = useState([]);
     const [userAuth, setUserAuth] = useState()
     const [userLocalStorageState, setUserLocalStorageState] = useState({})
+    const { handleLogout } = useAuth();
 
     useEffect(() => {
         loadHome()
@@ -75,6 +78,7 @@ export default function Home() {
                     <Link className={styles.cadvenda} href="/deskestoque">Tela de Estoque</Link><br/>
                     <Link className={styles.cadvenda} href="/cadastrarvenda">Cadastrar nova venda</Link><br />
                     <Link className={styles.cadvenda} href="/cadastrarproduto">Cadastrar novo produto</Link>
+                    <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
                 </div>
             )}
         </div>

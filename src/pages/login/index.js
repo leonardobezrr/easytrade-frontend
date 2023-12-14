@@ -12,12 +12,15 @@ export default function Login() {
         try {
             const userData = await login(email, senha);
             console.log('Login bem-sucedido. Usuário', userData);
+            alert('Login bem-sucedido!');
             localStorage.setItem('user', JSON.stringify(
                 userData,
             ))
             localStorage.setItem('authenticated', "estaAutenticado")
         } catch (error) {
             console.error('Erro ao fazer login', error);
+            alert('Erro ao fazer login!');
+
         }
     }
 
