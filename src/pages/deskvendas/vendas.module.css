@@ -52,7 +52,7 @@
 }
 
 .filtro{
-    display: flex;
+    display: none;
     padding: 5px 15px;
     justify-content: center;
     align-items: center;

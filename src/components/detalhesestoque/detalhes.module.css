@@ -9,6 +9,7 @@
 .infos{
     display: flex;
     padding: 5px 30px;
+    height: 40px;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
@@ -24,7 +25,7 @@
 }
 
 .card{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -32,7 +33,7 @@
 }
 
 .pesquisa{
-    display: flex;
+    display: none;
     padding: 0px 5px;
     justify-content: center;
     align-items: center;
