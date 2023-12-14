@@ -27,7 +27,7 @@ export default function CadastrarVenda() {
                     </label>
                     <br />
                     <br />
-                    <button className={style.but} type="submit">Cadastrar Produto</button>
+                    <button className={style.but} type="submit">Cadastrar Venda</button>
                 </div>
             </form>
         </div>

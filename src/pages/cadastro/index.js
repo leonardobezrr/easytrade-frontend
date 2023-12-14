@@ -12,13 +12,15 @@ const Cadastro = () => {
     const handleCadastro = async () => {
         try {
             const userData = await register(nome, email, senha);
-            console.log('Login bem-sucedido. Usuário', userData);
+            console.log('Cadastro bem-sucedido. Usuário', userData);
+            alert('Sucesso ao cadastrar usuário.'); 
             localStorage.setItem('user', JSON.stringify(
                 userData,
             ))
             localStorage.setItem('authenticated', "estaAutenticado")
         } catch (error) {
-            console.error('Erro ao fazer login', error);
+            console.error('Erro ao cadastrar usuário', error);
+            alert('Erro ao cadastrar usuário. Por favor, tente novamente.'); 
         }
     };
 

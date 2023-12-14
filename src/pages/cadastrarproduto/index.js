@@ -44,9 +44,11 @@ export default function CadastrarProduto() {
 
             if (response.ok) {
                 console.log('Produto cadastrado');
+                alert('Produto cadastrado com sucesso!');
                 setFormData(initialState);
             } else {
                 console.log('Falha ao cadastrar produto');
+                alert('Erro ao cadastrar produto!');
             }
         } catch (error) {
             console.error('Erro ao enviar a solicitação:', error);
