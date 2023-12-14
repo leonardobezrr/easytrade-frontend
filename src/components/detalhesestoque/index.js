@@ -1,7 +1,36 @@
 import style from "./detalhes.module.css"
 import Image from "next/image"
+import { useState, useEffect } from "react";
 
 export default function Detalhes(){
+
+    const [produtos, setProdutos] = useState([]);
+
+    useEffect(() => {
+        const idUsuario = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null;
+
+        if (idUsuario) {
+            fetchProdutos(idUsuario);
+        } else {
+            console.error('ID do usuário não encontrado.');
+        }
+    }, []);
+
+    const fetchProdutos = async (idUsuario) => {
+        try {
+            const response = await fetch(`https://easytrade-backend-p5k1.onrender.com/produtos/listar/${idUsuario}`);
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Dados dos produtos:', data);
+                setProdutos(data);
+            } else {
+                console.error('Falha ao obter produtos:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Erro ao fazer requisição de produtos:', error);
+        }
+    };
+    
     return(
         <section className={style.detalhes}>
                 <div className={style.infos}>
