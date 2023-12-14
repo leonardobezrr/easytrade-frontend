@@ -48,7 +48,7 @@ export default function Tabela() {
     };
 
     return (
-        <table border={1}>
+        <table>
             <thead>
                 <tr>
                     <th className={style.th}>ID</th>
@@ -68,7 +68,7 @@ export default function Tabela() {
                         <td className={style.td}>{produto.preco}</td>
                         <td className={style.td}>{produto.qtd_estoque}</td>
                         <td className={style.td}>
-                            <button onClick={() => handleExcluir(produto.id)}>Excluir</button>
+                            <button className={style.but} onClick={() => handleExcluir(produto.id)}>Excluir</button>
                         </td>
                     </tr>
                 ))}

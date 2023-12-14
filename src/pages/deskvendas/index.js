@@ -143,11 +143,11 @@ export default function Vendas() {
                 <tbody className={style.tabela_nome}>
                     {vendas?.map((venda) => (
                         <tr key={venda.id}>
-                            <td className={style.th1}>{venda.id}</td>
-                            <td className={style.th1}>{venda.date}</td>
-                            <td className={style.th1}>{venda.valor_venda}</td>
-                            <td className={style.th1}>
-                                <button onClick={() => handleVerProdutosClick(venda.id)}>ver produtos</button>
+                            <td className={style.td}>{venda.id}</td>
+                            <td className={style.td}>{venda.date}</td>
+                            <td className={style.td}>{venda.valor_venda}</td>
+                            <td className={style.td}>
+                                <button className={style.but} onClick={() => handleVerProdutosClick(venda.id)}>ver produtos</button>
                             </td>
                         </tr>
                     ))}
