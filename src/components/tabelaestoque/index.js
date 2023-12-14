@@ -33,34 +33,34 @@ export default function Tabela() {
     return (
         <table border={1}>
             <tr>
-                <td>
-                    <th>ID</th>
+                <td className={style.td1}>
+                    <th className={style.th}>ID</th>
                 </td>
-                <td>
-                    <th>Nome</th>
+                <td className={style.td1}>
+                    <th className={style.th}>Nome</th>
                 </td>
-                <td>
-                    <th>Descrição</th>
+                <td className={style.td1}>
+                    <th className={style.th}>Descrição</th>
                 </td>
-                <td>
-                    <th>Preço</th>
+                <td className={style.td1}>
+                    <th className={style.th}>Preço</th>
                 </td>
-                <td>
-                    <th>Quantidade em estoque</th>
+                <td className={style.td1}>
+                    <th className={style.th}>Quantidade em estoque</th>
                 </td>
-                <td>
-                    <th>Ações</th>
+                <td className={style.td1}>
+                    <th className={style.th}>Ações</th>
                 </td>
             </tr>
 
             {produtos?.map((produto) => (
                 <tr key={produto.id}>
-                    <td>{produto.id}</td>
-                    <td>{produto.nome}</td>
-                    <td>{produto.descricao}</td>
-                    <td>{produto.preco}</td>
-                    <td>{produto.qtd_estoque}</td>
-                    <td>
+                    <td className={style.td}>{produto.id}</td>
+                    <td className={style.td}>{produto.nome}</td>
+                    <td className={style.td}>{produto.descricao}</td>
+                    <td className={style.td}>{produto.preco}</td>
+                    <td className={style.td}>{produto.qtd_estoque}</td>
+                    <td className={style.td}>
                         Editar | Excluir
                     </td>
                 </tr>
