@@ -19,6 +19,7 @@ export default function Vendas() {
     const [produtosDaVenda, setProdutosDaVenda] = useState([]);
     const [selectedVendaId, setSelectedVendaId] = useState(null);
 
+    
 
     useEffect(() => {
         const idUsuario = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null;
